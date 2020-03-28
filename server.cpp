@@ -11,6 +11,8 @@
 #define BUF_SIZE 4096 /* Размер передаваемых блоков */
 #define QUEUE_SIZE 10
 
+fatal(char *string);
+
 int main(int argc, char *argv[])
 {
     int s, b, l, fd, sa, bytes, on = 1;
