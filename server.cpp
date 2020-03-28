@@ -53,3 +53,9 @@ int main(int argc, char *argv[])
         close(sa); /* Разорвать соединение */
     }
 }
+
+fatal(char *string)
+{
+    printf("%s\n", string);
+    exit(1);
+}
