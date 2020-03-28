@@ -11,7 +11,7 @@
 #define BUF_SIZE 4096 /* Размер передаваемых блоков */
 #define QUEUE_SIZE 10
 
-void fatal(char *string);
+void fatal(const char *string);
 
 int main(int argc, char *argv[])
 {
@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
     }
 }
 
-void fatal(char *string)
+void fatal(const char *string)
 {
     printf("%s\n", string);
     exit(1);
