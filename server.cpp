@@ -1,4 +1,6 @@
 /* Код программы для сервера */
+#include <cstring>
+
 #include <sys/types.h>
 #include <sys/fcntl.h>
 #include <sys/socket.h>
