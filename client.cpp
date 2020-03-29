@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
     if (s<0) fatal("Сокет");
     memset(&channel, 0, sizeof(channel));
     channel.sin_family=AF_INET;
-    memcpy(&channel.sin_addr.s_addr,h>h_addr,h>h_length);
+    memcpy(&channel.sin_addr.s_addr,h->h_addr,h->h_length);
     channel.sin_port=htons(SERVER_PORT);
     c = connect(s,(struct sockaddr *) &channel, sizeof(channel));
     if (c<0) fatal("Ошибка соединения");
