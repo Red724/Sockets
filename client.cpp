@@ -1,12 +1,23 @@
 /* На этой странице содержится клиентская программа, запрашивающая файл у серверной
 программы, расположенной на следующей странице. */
 /* Сервер в ответ на запрос высылает файл.*/
+
+#include <cstring>
+#include <cstdio>
+#include <stdlib.h> /* exit */
+
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <netdb.h>
+
+#include <unistd.h> /* read, write, open, close */
+
 #define SERVER_PORT 12345 /* По договоренности между клиентом и сервером */
 #define BUF_SIZE 4096 /* Размер передаваемых блоков */
+
+void fatal(const char *string);
+
 int main(int argc, char *argv)
 {
     int c,s,bytes;
@@ -33,7 +44,8 @@ int main(int argc, char *argv)
         write(1, buf, bytes); /* Записать на стандартное устройство вывода */
     }
 }
-fatal(char *string)
+
+void fatal(const char *string)
 {
     printf("%s\n", string);
     exit(1);
