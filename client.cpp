@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
     c = connect(s,(struct sockaddr *) &channel, sizeof(channel));
     if (c<0) fatal("Ошибка соединения");
     /* Соединение установлено. Посылается имя файла с нулевым байтом на конце */
-    write*s, argv[2], strlen(argv[2])+1);
+    write(s, argv[2], strlen(argv[2])+1);
     /* Получить файл, записать на стандартное устройство вывода */
     while (1) {
         bytes = read(s, buf, BUF_SIZE); /* Читать из сокета */
