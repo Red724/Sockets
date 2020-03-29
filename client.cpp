@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
     struct sockaddr_in channel; /*хранит IP=адрес */
     if (argc!=3) fatal("Для запуска введите: client имя_сервера имя_файла");
     h = gethostbyname(argv[1]); /* поиск IP-адреса хоста */
-    if(!h) fatal("Ошибка выполнения gethostbyname")
+    if(!h) fatal("Ошибка выполнения gethostbyname");
     s = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);
     if (s<0) fatal("Сокет");
     memset(&channel, 0, sizeof(channel));
