@@ -8,6 +8,8 @@
 #include <netinet/in.h>
 #include <netdb.h>
 
+#include <unistd.h> /* read, write, open, close */
+
 #define SERVER_PORT 12345 /* По договоренности между клиентом и сервером */
 #define BUF_SIZE 4096 /* Размер передаваемых блоков */
 #define QUEUE_SIZE 10
