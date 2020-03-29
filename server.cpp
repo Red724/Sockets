@@ -1,6 +1,7 @@
 /* Код программы для сервера */
 #include <cstring>
 #include <cstdio>
+#include <stdlib.h> /* exit */
 
 #include <sys/types.h>
 #include <sys/fcntl.h>
