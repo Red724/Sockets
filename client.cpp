@@ -18,7 +18,7 @@
 
 void fatal(const char *string);
 
-int main(int argc, char *argv)
+int main(int argc, char *argv[])
 {
     int c,s,bytes;
     char buf[BUF_SIZE]; /*буфер для входящего файла */
