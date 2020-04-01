@@ -4,12 +4,18 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <netdb.h>
+#include <cstring>
+#include <unistd.h>
+#include <cstdio>
+#include <stdlib.h>
 
 #define SERVER_PORT 12345 /* По договоренности между клиентом и сервером */
 #define BUF_SIZE 4096 /* Размер передаваемых блоков */
 #define QUEUE_SIZE 10
 
-int main(int argc, char *argv[]) ;
+void fatal(const char *string);
+
+int main(int argc, char *argv[])
 {
     int s, b, l, fd, sa, bytes, on = 1;
     char buf[BUF_SIZE]; /* буфер для исходящего файла */
@@ -49,5 +55,10 @@ int main(int argc, char *argv[]) ;
         }
         close(fd); /* Закрыть файл */
         close(sa); /* Разорвать соединение */
-    }
+   }
+}
+void fatal (const char *string)
+{
+    printf("%s\n", string);
+    exit(1);        
 }
